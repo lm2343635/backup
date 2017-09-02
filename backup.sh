@@ -1,10 +1,11 @@
 WWWROOT=/data/wwwroot;
 NGINX_CONF=/usr/local/nginx/conf/vhost;
+username='';
+password='';
 
 site=$1;
 path=$2;
-username=$3;
-password=$4;
+
 
 backupPath="$path/$site"
 

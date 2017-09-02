@@ -7,8 +7,6 @@ path=$1;
 site=$2;
 
 recoverPath="$WWWROOT/$site"
-# Try to delete if recover path is existing.
-rm -rf $recoverPath
 echo "Copying source file from $path/$site to $recoverPath."
 cp -rf "$path/$site" $recoverPath
 chmod -R 755 $recoverPath

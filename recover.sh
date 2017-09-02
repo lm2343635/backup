@@ -1,10 +1,10 @@
 WWWROOT=/data/wwwroot;
 NGINX_CONF=/usr/local/nginx/conf/vhost;
+username='';
+password='';
 
 path=$1;
 site=$2;
-username=$3;
-password=$4;
 
 recoverPath="$WWWROOT/$site"
 # Try to delete if recover path is existing.

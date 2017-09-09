@@ -1,5 +1,6 @@
-username='';
-password='';
+while read line;do
+    eval "$line" 
+done < config
 
 site=$1;
 sql=$2;

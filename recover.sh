@@ -6,6 +6,7 @@ site=$1;
 path=$2;
 
 recoverPath="$wwwroot/$site"
+
 echo "Copying source file from $path/$site to $recoverPath."
 cp -rf "$path/$site" $recoverPath
 chmod -R 755 $recoverPath

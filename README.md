@@ -6,8 +6,8 @@ Backup and recover script for PHP website running on Linux server.
 The format of config file:
 
 ```shell
-wwwroot=/data/wwwroot
-nginx=/usr/local/nginx/conf/vhost
+wwwroot=/data/wwwroot/
+nginx=/usr/local/nginx/conf/vhost/
 username=
 password=
 ```
@@ -15,9 +15,30 @@ Create a config file named `config` in the backup script folder and add the conf
 
 ## Documentation
 
-- backup.sh
-- recover.sh
-- recover_all.sh
+**All folder should endup with "/".**
+
+- backup.sh: Backup a site to a folder. All files of the site, sql backup of database and nginx configuration file will be copied to the folder.
+```shell
+./backup.sh [site] [path]
+```
+
+- backup_zip.sh: Backup a site to a zip file.
+```shell
+./backup_zip.sh [site] [path]
+```
+
+- recover.sh: Recover a site from the folder created by the shell script backup.sh. Nginx server should be restarted manually after recovering the website.
+```shell
+./recover.sh [site] [path]
+service nginx restart
+```
+
+- recover_all.sh: Recover all sites from the folder created by the shell script backup.sh in a parent folder. Here, the name of subfolder will be used as the name of the site. Nginx server should be restarted manually after recovering the website.
+```shell
+./recover_all.sh [path]
+service nginx restart
+```
+
 - dump.sh
 - execute.sh
 - execute_all.sh

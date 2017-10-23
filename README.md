@@ -40,5 +40,9 @@ service nginx restart
 ```
 
 - dump.sh
-- execute.sh
+- execute.sh: Excute a sql file and restore it into a new database, the name of the new database is the parameter site.
+```shell
+./execute.sh [site] [path]
+```
+
 - execute_all.sh

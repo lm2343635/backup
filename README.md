@@ -1,5 +1,5 @@
 # backup
-Backup and recover script for PHP website running on Linux server.
+The script to backup and recover PHP website running on Linux server.
 
 ## Setup
 
@@ -39,10 +39,22 @@ service nginx restart
 service nginx restart
 ```
 
-- dump.sh
-- execute.sh: Excute a sql file and restore it into a new database, the name of the new database is the parameter site.
+- dump.sh: Dump a database to a sql file.
+```shell
+./dump.sh [site] [path]
+```
+
+- execute.sh: Execute a sql file and restore it into a new database, the name of the new database is the parameter site.
 ```shell
 ./execute.sh [site] [path]
 ```
 
-- execute_all.sh
+- execute_all.sh: Execute all sql files in a folder and store them to databases. The name of a database is same with the name of a sql file.
+```shell
+./execute.sh [folder]
+```
+
+- privilege.sh: Change privilege of a DedeCMS website.
+```shell
+./privilege.sh [path]
+```

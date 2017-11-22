@@ -1,5 +1,7 @@
-# backup
-The script to backup and recover PHP website running on Linux server.
+# Backup Script for Oneinstack
+The script to backup and recover PHP website for oneinstack(https://oneinstack.com) running on Linux server.
+
+Oneinstack(https://github.com/lj2007331/oneinstack) is a script written using the shell, in order to quickly deploy LEMP/LAMP/LNMP/LNMPA/LTMP(Linux, Nginx/Tengine/OpenResty, MySQL in a production environment/MariaDB/Percona, PHP, JAVA), applicable to CentOS 57(including redhat), Debian 68, Ubuntu 12~16 of 32 and 64.
 
 ## Setup
 

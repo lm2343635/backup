@@ -60,3 +60,8 @@ service nginx restart
 ```shell
 ./privilege.sh [path]
 ```
+
+- remove.sh: Remove a website.
+```shell
+./remove.sh [site]
+```

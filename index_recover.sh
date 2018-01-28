@@ -16,6 +16,8 @@ do
 		for file in ${files[@]}; do
   			rm -rf "$path/$file"
 			cp "$indexes$site/$file" $path
+			chmod 755 "$wwwroot$site/$file"
+			chown www:www "$wwwroot$site/$file"
 		done
 	fi
 done

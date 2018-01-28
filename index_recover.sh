@@ -2,6 +2,8 @@ while read line;do
     eval "$line"
 done < config
 
+files=$(echo $indexFiles|tr "/" "\n")
+
 for file in `ls $indexes`
 do
     site="${file%.*}";
@@ -11,7 +13,9 @@ do
     path="$wwwroot$site"
     if [ -d $path ];then
 		echo "Recover the index.html file of the website $site"
-		rm -rf "$path/index.html"
-		cp "$indexes$site/index.html" $path
+		for file in ${files[@]}; do
+  			rm -rf "$path/$file"
+			cp "$indexes$site/$file" $path
+		done
 	fi
 done

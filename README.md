@@ -10,6 +10,7 @@ The format of config file:
 ```shell
 wwwroot=/data/wwwroot/
 indexes=/data/indexes/
+indexFiles=index.html/index.php
 nginx=/usr/local/nginx/conf/vhost/
 username=
 password=
@@ -92,8 +93,16 @@ service nginx restart
 ```
 
 - index_backup.sh:
-    - Backup all index.html files.
+    - Backup all index files defined in indexFiles of the config file.
 
 ```shell
 ./index_backup.sh
 ```    
+
+- index_recover.sh:
+    - Recover all index files defined in indexFiles of the config file.
+    - This script can be added to crontab in order to recover index files automatically.
+
+```shell
+./index_recover.sh
+```

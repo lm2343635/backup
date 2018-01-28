@@ -9,6 +9,7 @@ The format of config file:
 
 ```shell
 wwwroot=/data/wwwroot/
+indexes=/data/indexes/
 nginx=/usr/local/nginx/conf/vhost/
 username=
 password=
@@ -89,3 +90,10 @@ service nginx restart
 ```shell
 ./remove.sh [site]
 ```
+
+- index_backup.sh:
+    - Backup all index.html files.
+
+```shell
+./index_backup.sh
+```    

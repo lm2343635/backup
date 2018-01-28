@@ -12,12 +12,16 @@ do
     fi
     path="$wwwroot$site"
     if [ -d $path ];then
-		echo "Recover the index.html file of the website $site"
+		echo "Recover the index files of the website $site"
 		for file in ${files[@]}; do
-  			rm -rf "$path/$file"
-			cp "$indexes$site/$file" $path
-			chmod 755 "$wwwroot$site/$file"
-			chown www:www "$wwwroot$site/$file"
+			filePath="$path/$file"
+			if [ -f $filePath ];then
+				rm -rf $filePath
+				cp "$indexes$site/$file" $filePath
+				chmod 755 $filePath
+				chown www:www $filePath
+   				echo "    $filePath has been recoverd."
+			fi
 		done
 	fi
 done

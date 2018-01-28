@@ -19,6 +19,10 @@ do
     rm -rf $indexBackPath
    	mkdir $indexBackPath
    	for file in ${files[@]}; do
-  		cp "$wwwroot$site/$file" "$indexes$site/$file"
+   		filePath="$wwwroot$site/$file"
+   		if [ -f $filePath ];then
+   			echo "    $filePath has been saved."
+			cp $filePath "$indexes$site/$file"
+		fi
 	done
 done
